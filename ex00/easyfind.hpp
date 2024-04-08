@@ -1,8 +1,11 @@
-#ifndef EASYFINE_HPP
-#define EASYFINE_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <algorithm>
 
 template <typename T>
-void easyfind(const T& container, const int toFind) {}
+typename T::iterator easyfind(const T& container, const int toFind);
+
+#include "easyfind.tpp"
+
 #endif
