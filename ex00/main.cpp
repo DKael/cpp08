@@ -22,25 +22,18 @@ int main() {
   for (size_t i = 0; i < 5; i++) {
     iLst.push_back(i * 10);
   }
-  std::array<int, 5> iArr;
-  for (size_t i = 0; i < 5; i++) {
-    iArr[i] = i * 10;
-  }
 
   std::__1::vector<int>::iterator iVecIter;
   std::__1::deque<int>::iterator iDeqIter;
   std::__1::list<int>::iterator iLstIter;
-  std::__1::array<int, 5>::iterator iArrIter;
 
   try {
     iVecIter = easyfind(iVec, 0);
     iDeqIter = easyfind(iDeq, 10);
     iLstIter = easyfind(iLst, 20);
-    iArrIter = easyfind(iArr, 30);
     std::cout << "iVec find " << *iVecIter << "!\n";
     std::cout << "iDeq find " << *iDeqIter << "!\n";
     std::cout << "iLst find " << *iLstIter << "!\n";
-    std::cout << "iArr find " << *iArrIter << "!\n";
   } catch (std::invalid_argument& e1) {
     std::cerr << e1.what();
   } catch (std::exception& e2) {
@@ -51,11 +44,9 @@ int main() {
     iVecIter = easyfind(iVec, 100);
     iDeqIter = easyfind(iDeq, 100);
     iLstIter = easyfind(iLst, 200);
-    iArrIter = easyfind(iArr, 300);
     std::cout << "iVec find " << *iVecIter << "!\n";
     std::cout << "iDeq find " << *iDeqIter << "!\n";
     std::cout << "iLst find " << *iLstIter << "!\n";
-    std::cout << "iArr find " << *iArrIter << "!\n";
   } catch (std::invalid_argument& e1) {
     std::cerr << e1.what();
   } catch (std::exception& e2) {
