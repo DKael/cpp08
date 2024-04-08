@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <array>
 #include <deque>
 #include <iostream>
 #include <list>
@@ -23,9 +22,9 @@ int main() {
     iLst.push_back(i * 10);
   }
 
-  std::__1::vector<int>::iterator iVecIter;
-  std::__1::deque<int>::iterator iDeqIter;
-  std::__1::list<int>::iterator iLstIter;
+  std::vector<int>::iterator iVecIter;
+  std::deque<int>::iterator iDeqIter;
+  std::list<int>::iterator iLstIter;
 
   try {
     iVecIter = easyfind(iVec, 0);
@@ -57,7 +56,7 @@ int main() {
   for (size_t i = 0; i < 5; i++) {
     dVec.push_back(i * 10);
   }
-  std::__1::vector<double>::iterator dVecIter;
+  std::vector<double>::iterator dVecIter;
   try {
     dVecIter = easyfind(dVec, 10);
     std::cout << "dVec find " << *dVecIter << "!\n";

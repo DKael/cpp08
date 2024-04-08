@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <vector>
+#include <limits>
 
 class Span {
  private:
