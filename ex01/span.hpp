@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <vector>
 #include <limits>
+#include <vector>
 
 class Span {
  private:
@@ -24,8 +24,6 @@ class Span {
   void fillRandomNumbers(void);
   int shortestSpan(void) const;
   int longestSpan(void) const;
-  std::vector<int>::iterator begin(void);
-  std::vector<int>::iterator end(void);
   void print(void);
 };
 

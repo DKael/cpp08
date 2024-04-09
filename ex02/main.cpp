@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 
 #include "MutantStack.hpp"
 
@@ -21,5 +22,24 @@ int main() {
     ++it;
   }
   std::stack<int> s(mstack);
+
+  std::list<int> lst;
+  lst.push_back(5);
+  lst.push_back(17);
+  // std::cout << lst.top() << std::endl;
+  // lst.pop();
+  std::cout << lst.size() << std::endl;
+  lst.push_back(3);
+  lst.push_back(5);
+  lst.push_back(737);  //[...] lst.push(0);
+  std::list<int>::iterator lit = lst.begin();
+  std::list<int>::iterator lite = lst.end();
+  ++lit;
+  --lit;
+  while (lit != lite) {
+    std::cout << *lit << std::endl;
+    ++lit;
+  }
+  std::list<int> lstCopy(lst);
   return 0;
 }

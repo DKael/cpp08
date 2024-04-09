@@ -32,12 +32,15 @@ void Span::addNumber(const int input) {
 }
 
 void Span::fillRandomNumbers(void) {
-  std::vector<int>::iterator begin = storage.begin();
+  if (storage.size() == capacity) {
+    throw std::range_error("Span full!\n");
+  }
+  std::vector<int>::iterator begin = storage.begin() + storage.size();
   std::vector<int>::iterator end = storage.begin() + capacity;
 
   srand(static_cast<unsigned int>(time(NULL)));
   for (; begin != end; ++begin) {
-    storage.push_back((rand() % (capacity * 10)) - capacity * 5);
+    storage.push_back((rand() % (capacity * 20)) - capacity * 10);
   }
 }
 
@@ -71,15 +74,20 @@ int Span::longestSpan(void) const {
   return (biggset - smallest);
 }
 
-std::vector<int>::iterator Span::begin(void) { return storage.begin(); }
-
-std::vector<int>::iterator Span::end(void) { return storage.end(); }
-
 void Span::print(void) {
   std::vector<int>::iterator begin = storage.begin();
   std::vector<int>::iterator end = storage.end();
-  for (; begin != (end - 1); begin++) {
-    std::cout << *begin << " ";
+
+  std::cout << "storage's size     : " << storage.size() << '\n';
+  std::cout << "storage's capacity : " << storage.capacity() << '\n';
+  std::cout << "--------------------------contents--------------------------\n";
+  if (storage.size() == 0) {
+    std::cout << "storage empty\n";
+  } else {
+    for (; begin != (end - 1); begin++) {
+      std::cout << *begin << " ";
+    }
+    std::cout << *begin << '\n';
   }
-  std::cout << *begin << '\n';
+  std::cout << '\n';
 }
